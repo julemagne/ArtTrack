@@ -1,0 +1,29 @@
+<div class="title">
+ <%= image_tag asset_url('costs.png'), class: "card-header-icon" %>My Costs
+ <%= form_tag business_expenses_path, method: :get do %>
+ <%= text_field_tag :search, params[:search], placeholder:"Enter Search" %>
+ <%= image_submit_tag "search.png", class: "search-button", name: nil %>
+ <% end %>
+</div>
+<h3><%= link_to 'Add a new expense', new_business_expense_path %> </h3>
+<% if @business_expenses.length > 0 %>
+   <% @business_expenses.each do |business_expense| %>
+     <div class="cards">
+       <div class="card">
+         <div class="card-header">
+           <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_business_expense_path(business_expense) %>
+           <h2><%= link_to business_expense.name.capitalize, business_expense%></h2>
+         </div>
+         <div class="index-card">
+          <p><%= number_to_currency(business_expense.amount) %>
+            <% if business_expense.date %>
+             on <%= business_expense.date.strftime("%B %d, %Y") %>
+            <% end %>
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+<% end %>

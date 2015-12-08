@@ -1,0 +1,43 @@
+<%= form_for(@sales_goal) do |f| %>
+  <% if @sales_goal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sales_goal.errors.count, "error") %> prohibited this sales_goal from being saved:</h2>
+
+      <ul>
+      <% @sales_goal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="index-card">
+        <div class="field">
+          <p><%= f.label :amount %></br>
+          <%= f.number_field :amount%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :start_time, 'Start date' %></br>
+          <%= f.date_select :start_time%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :length_of_time, 'How long?'%></br>
+          <%= number_field_tag :number, value = @sales_goal.days_remaining %>
+          <%= select_tag :units, options_for_select(["days", "weeks", "months", "years"]) %></p>
+        </div>
+        <% if :sales_channels %>
+        <div class="field">
+          <p><%= f.label :sales_channel %></br>
+          <%= f.collection_select(:sales_channel_id, @sales_channels, :id, :name, prompt: true)%></p>
+        </div>
+        <% end %>
+        <div class="actions">
+          <p><%= f.submit %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

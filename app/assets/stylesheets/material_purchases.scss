@@ -1,0 +1,97 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.material-index-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.material-index-description{
+  @include span-columns(7);
+}
+
+.material-index-cost{
+  @include span-columns(2);
+}
+.material-index-units{
+  @include span-columns(3);
+  @include omega();
+}
+
+.material-show-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.material-show-description{
+  @include span-columns(6);
+}
+
+.material-show-cost{
+  @include span-columns(2);
+}
+
+.material-show-units{
+  @include span-columns(3);
+}
+
+.material-index-edit{
+  @include span-columns(12);
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 35pt;
+}
+
+.material-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}
+
+
+
+.material-purchase-index-card-title{
+  h2{
+    @include span-columns(10);
+  }
+}
+
+.material-purchase-index-row{
+  @include row();
+}
+
+
+.gd {
+  margin-top: 5px; margin-bottom: 5px;
+  display: inline-block;
+}
+
+.link-to-new-material-purchase {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    float: right;
+  }
+}

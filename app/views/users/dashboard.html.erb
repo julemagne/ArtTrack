@@ -1,0 +1,62 @@
+<div class="title"><%= link_to (image_tag asset_url('home.png'), class: "card-header-icon"), root_path %>Dashboard</div>
+<div class="cards">
+
+  <div class="card start-of-line">
+    <% if @user.sales_goals.length > 0 %>
+      <div class="card-image">
+        <div class="donut-graph" data-percentage="<%= @percent_completion %>"></div>
+      </div>
+      <div class="card-copy">
+        <p>Goal: <%= "#{number_to_currency(@goal.amount)} in sales by #{@goal.end_time.strftime("%B %d, %Y")}" %></p>
+      </div>
+    <% else %>
+      <div class="card-image">
+      </div>
+      <div class="card-copy">
+        <p><%= link_to 'Add a Sales Goal', new_sales_goal_path %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="card end-of-line">
+    <div class="card-image">
+      <div id="pieChart"></div>
+    </div>
+    <div class="card-copy">
+      <p>Active Sales Channels</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h1><%= link_to (image_tag asset_url('p1.png'), class: "card-header-icon"), projects_path %><%= link_to 'My Projects', projects_path %></h1>
+    </div>
+    <div class="card-copy">
+      <% if @projects.length > 0 %>
+        <% @projects.each do |project| %>
+          <p><%= link_to project.name, project %></p>
+        <% end %>
+      <p><%= link_to '(See All)', projects_path %></p>
+    <% else %>
+      <p><%= link_to 'Create a Project', new_project_path %></p>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h1><%= link_to (image_tag asset_url('sales.png'), class: "card-header-icon"), sales_path %><%= link_to 'My Sales', sales_path %></h1>
+    </div>
+    <div class="card-copy">
+      <% if @sales.length > 0 %>
+        <% @sales.each do |sale| %>
+          <p><%= link_to sale.project.name, sale %>: <%= number_to_currency(sale.gross) %></p>
+        <% end %>
+      <p><%= link_to '(See All)', sales_path %></p>
+    <% else %>
+      <p><%= link_to 'View Projects', projects_path %></p>
+    <% end %>
+    </div>
+  </div>
+
+</div>

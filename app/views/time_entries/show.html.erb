@@ -1,0 +1,15 @@
+<div class="title"></div>
+<div class="cards">
+  <div class="card">
+    <div class="card-header">
+      <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_time_entry_path(@time_entry) %>
+      <h2>Time Entry for <%= @time_entry.project.name %></h2>
+    </div>
+    <div class="index-card padding-underload">
+      <h3>Start time: <%= @time_entry.start_time.strftime("%B %d, %Y, %I:%M%P") %></h3>
+      <h3>Stop time: <%= @time_entry.stop_time.strftime("%B %d, %Y, %I:%M%P") %></h3>
+      <h3><%= @time_entry.date %></h3>
+        <h3 class="padding-overload"><%= link_to 'Back to Time Entries', time_entries_path(id: @time_entry.project_id) %></h3>
+    </div>
+  </div>
+</div>

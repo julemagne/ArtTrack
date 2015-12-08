@@ -1,0 +1,46 @@
+<div class="login-boxes">
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+        <p>
+          <%= f.label :name %>
+          <%= f.text_field :name, value: @user.name || "" %>
+        </p>
+        <p>
+          <%= f.label :email %>
+          <%= f.text_field :email, value: @user.email || "" %>
+        </p>
+        <% if !logged_in? %>
+        <p>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </p>
+        <% else %>
+        <% end %>
+        <p>
+          <%= f.label :hourly_rate %>
+          <%= f.number_field :hourly_rate, :class => 'text_field', :step => 0.01 %>
+        </p>
+        <% if logged_in? %>
+        <p>
+          <%= f.label :update_avatar %>
+          <%= f.file_field :avatar %>
+        </p>
+        <% else %>
+        <% end %>
+
+        <p>
+          <%= f.submit 'Submit' %>
+        </p>
+      <% end %>
+    </div>

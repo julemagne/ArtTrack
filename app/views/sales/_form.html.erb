@@ -1,0 +1,40 @@
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="index-card">
+        <div class="field">
+          <%= f.hidden_field :project_id, value: @sale.project_id || params[:project_id] %>
+          <%= f.hidden_field :user_id, value: @sale.user_id || @current_user.id %>
+        </div>
+        <div class="field">
+          <p><%= f.label :gross, value: "Sale Amount" %></br>
+          <%= f.number_field :gross, :class => 'text_field', :step => 0.01, value: @sale.gross || ""%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :date, value: "Sale Date" %></br>
+          <%= f.date_select :date, value: @sale.date || ""%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :sales_channel_id, value: "Sales Channel" %></br>
+          <%= f.collection_select(:sales_channel_id, @sales_channels, :id, :name, prompt: true) %></p>
+        </div>
+        <div class="actions">
+          <p><%= f.submit %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

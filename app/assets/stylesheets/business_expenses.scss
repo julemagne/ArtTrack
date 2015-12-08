@@ -1,0 +1,88 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.business-index-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.business-index-description{
+  @include span-columns(7);
+}
+
+.business-index-amount{
+  @include span-columns(2);
+}
+.business-index-recurring{
+  @include span-columns(3);
+  @include omega();
+}
+
+.business-show-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.business-show-description{
+  @include span-columns(6);
+}
+
+.business-show-amount{
+  @include span-columns(2);
+}
+
+.business-show-recurring{
+  @include span-columns(3);
+}
+
+.business-index-edit{
+  @include span-columns(12);
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 35pt;
+}
+
+.business-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}
+
+.business-goal-amount {
+  font-family: Baskerville;
+}
+
+.gd {
+  margin-top: 5px; margin-bottom: 5px;
+  display: inline-block;
+}
+
+.link-to-new-business-expense {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    
+    float: right;
+  }
+}

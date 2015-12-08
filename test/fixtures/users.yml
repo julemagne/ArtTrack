@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: Julie
+  email: julie@email.com
+  password_digest: <%= BCrypt::Password.create("password") %>
+  public_profile: false
+  time_zone: Eastern Time (US & Canada)
+  hourly_rate: 9.99
+
+two:
+  id: 2
+  name: Angela
+  email: angela@email.com
+  password_digest: <%= BCrypt::Password.create("password") %>
+  public_profile: false
+  time_zone: Eastern Time (US & Canada)
+  hourly_rate: 9.99

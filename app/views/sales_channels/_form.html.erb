@@ -1,0 +1,35 @@
+<%= form_for(@sales_channel) do |f| %>
+  <% if @sales_channel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sales_channel.errors.count, "error") %> prohibited this sales_channel from being saved:</h2>
+
+      <ul>
+      <% @sales_channel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="index-card">
+        <div class="field">
+          <%= f.hidden_field :user_id, value: @sales_channel.user_id || @current_user.id %>
+        </div>
+        <div class="field">
+          <p><%= f.label :name %></br>
+          <%= f.text_field :name, value: @sales_channel.name || ""%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :description %></br>
+          <%= f.text_area :description, value: @sales_channel.description || ""%></p>
+        </div>
+        <div class="actions">
+          <p><%= f.submit %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="title">
+  <%= image_tag asset_url('p2.png'), class: "card-header-icon" %>My Materials Inventory
+  <%= form_tag material_purchases_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder:"Enter Search" %>
+  <%= image_submit_tag "search.png", class: "search-button", name: nil %>
+  <% end %>
+</div>
+
+<h3><%= link_to 'Add a New Purchase', new_material_purchase_path %></h3>
+
+<% if @material_purchases %>
+  <% @material_purchases.each do |material_purchase| %>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header material-purchase-index-row">
+
+          <div class="material-purchase-index-card-title">
+            <h2><%= link_to material_purchase.name, material_purchase %></h2>
+            <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_material_purchase_path(material_purchase) %>
+          </div>
+
+          <div class="index-card">
+            <h3>
+              Units remaining: <%= proper_decimal(material_purchase.units_remaining) %><br />
+              Cost per unit: <%= number_to_currency(material_purchase.cost_per_unit) %>
+            </h3>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

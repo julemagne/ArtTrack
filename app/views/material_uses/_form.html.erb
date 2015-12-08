@@ -1,0 +1,38 @@
+<%= form_for(@material_use) do |f| %>
+  <% if @material_use.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@material_use.errors.count, "error") %> prohibited this material_use from being saved:</h2>
+
+      <ul>
+      <% @material_use.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br />
+  <%= f.fields_for :material_uses do |f| %>
+    <div class="field">
+      <%= f.hidden_field :project_id, value: params[:project_id] || nil  %>
+      <%= f.hidden_field :user_id, value: @current_user.id  %>
+    </div>
+    <div class="field">
+      <%= f.label :material_purchase_id, value: "Material" %><br>
+      <%= f.collection_select(:material_purchase_id, @current_user.material_purchases.order(:name), :id, :name, {prompt: "Select Material"})%>
+    </div>
+    <div class="field">
+      <%= f.label :units %><br>
+      <%= f.number_field :units%>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :_destroy %><br>
+      <%= f.hidden_field :_destroy %>
+    </div>
+    <div class="actions">
+      <%= f.submit%>
+    </div>
+
+    <hr />
+  <% end %>
+
+<% end %>

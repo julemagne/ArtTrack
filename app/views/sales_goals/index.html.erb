@@ -1,0 +1,45 @@
+<% title = params[:inactive] ? "My Ended Sales Goals" : "My Active Sales Goals" %>
+<h1 class="title goal-active"><%= image_tag asset_url('goals.png'), class: "card-header-icon" %><%= title %></h1>
+
+<h3><%= link_to 'New Sales Goal', new_sales_goal_path %>
+  <% if params[:inactive] %>
+  <%= link_to 'Show Only Active Sales Goals', sales_goals_path %>
+  <% else %>
+  <%= link_to 'Show Only Ended Sales Goals', sales_goals_path(inactive: true) %>
+  <% end %>
+</h3>
+
+<% if @goals %>
+  <% @goals.each do |goal| %>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header goal-index-row">
+          <div class="goal-index-card-title">
+            <h2>
+              Goal: <%= link_to number_to_currency(goal.amount), goal %> in sales
+              <%= " at " + SalesChannel.find(goal.sales_channel_id).name if goal.sales_channel_id %>
+            </h2>
+            <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_sales_goal_path(goal) %>
+          </div>
+
+          <div class="index-card">
+            <h3>
+              <%= goal.start_time.strftime("%B %d, %Y") %> - <%= goal.end_time.strftime("%B %d, %Y") %><br />
+              <%= goal.days_remaining%> days left
+            </h3>
+
+            <div class="goal-index-success">
+              <div class="progress-bar-indication">
+                <% percent_completion = (SalesGoal.percent_completion(goal) * 100).floor %>
+                <span class="meter" style="<%= "width: #{percent_completion}%" %>" >
+                  <p><%= percent_completion %>%</p>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

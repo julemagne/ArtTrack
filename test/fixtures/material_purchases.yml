@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_id: 1
+  name: MyString
+  cost: 9.99
+  units: 50
+  units_remaining: 50
+
+two:
+  id: 2
+  user_id: 1
+  name: MyString
+  cost: 9.99
+  units: 9.99

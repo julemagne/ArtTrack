@@ -1,0 +1,15 @@
+      <div class="profile-image-column">
+        <%= image_tag @current_user.avatar.url(:medium), class: "profile-image" %>
+      </div>
+      <div class="profile-middle-column">
+        <h1><%= @current_user.name %></h1>
+        <p><%= @current_user.email %></p>
+        <p><%= number_to_currency(@current_user.hourly_rate) %>/hour</p>
+        <p><%= link_to (image_tag asset_url('edit.png'), size: "20x20"), edit_user_path(@current_user) %></p>
+      </div>
+      <div class="profile-right-column">
+        <p><label class="stat-label">Sales:</label> <%= @sales.count %></p>
+        <p><label class="stat-label">Projects:</label> <%= @current_user.projects.count %></p>
+        <p><label class="stat-label">Sales goals:</label> <%= @current_user.sales_goals.count %></p>
+        <p><label class="stat-label">Goals reached:</label> <%= @current_user.sales_goals.where(success: true).count %></p>
+      </div>

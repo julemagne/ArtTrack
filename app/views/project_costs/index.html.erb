@@ -1,0 +1,50 @@
+<div class="title">
+  <%= image_tag asset_url('costs.png'), class: "card-header-icon" %>Project Costs Breakdowns
+  <%= form_tag project_costs_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder:"Enter Search" %>
+  <%= image_submit_tag "search.png", class: "search-button", name: nil %>
+  <% end %>
+</div>
+
+<h3><%= link_to 'Add New Project', new_project_path %> <%= link_to 'See All Projects', projects_path %> <%= link_to 'See Sold Projects', projects_path(sold: true) %> </h3>
+<% if @projects.length > 0 %>
+  <% @projects.each do |project| %>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header">
+          <h2>Costs for <%= link_to project.name, project %>:</h2>
+          <div class="details">
+          <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_project_path(project) %>
+          <%= link_to (image_tag asset_url('destroy.png'), class: "index-icon"), project, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div></br>
+            <% if project.material_uses.length > 0 || project.project_costs.length > 0 %>
+              <% if project.material_uses.length > 0 %>
+                <% project.material_uses.each do |material_use| %>
+                  <div class="details">
+                    <%= material_use.name %>
+                    <%= material_use.units %>
+                    <%= number_to_currency(material_use.cost) %>
+                  </div>
+                <% end %>
+              <% else %>
+              <% end %>
+              <% if project.project_costs.length > 0 %>
+                <% project.project_costs.each do |project_cost| %>
+                  <div class="details">
+                    <%= project_cost.cost_type %>
+                    <%= number_to_currency(project_cost.amount) %>
+                  </div>
+                <% end %></br>
+              <% else %>
+              <% end %>
+            <% else %>
+            <div class="details">
+              <p>There are no current projects costs.</p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+<% end %>

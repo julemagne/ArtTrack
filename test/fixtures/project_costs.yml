@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  cost_type: Shipping
+  amount: 15
+
+two:
+  project_id: 1
+  cost_type: Licensing
+  amount: 50

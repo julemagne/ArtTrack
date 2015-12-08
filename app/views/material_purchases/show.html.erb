@@ -1,0 +1,27 @@
+<div class="title"></div>
+<div class="cards">
+  <div class="card">
+    <div class="card-header material-purchase-index-row">
+      <div class="material-purchase-index-card-title">
+        <h2><%= @material_purchase.name %></h2>
+      </div>
+      <div class="material-purchase-index-icons">
+        <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_material_purchase_path(@material_purchase) %>
+      </div>
+      <div class="index-card">
+        <h3>
+          Total Cost: <%= number_to_currency(@material_purchase.cost) %><br />
+          Units: <%= proper_decimal(@material_purchase.units) %><br />
+          Units remaining: <%= proper_decimal(@material_purchase.units_remaining) %><br />
+        </h3>
+        <% if @material_purchase.receipt.instance.receipt_updated_at != nil %>
+          <h3> Receipt:</h3>
+          <%= image_tag @material_purchase.receipt.url%>
+        <% else %>
+          <h3 class="padding-overload"><%= link_to 'Add a Receipt', edit_material_purchase_path %></h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<h3><%= link_to 'Back to Materials Inventory', material_purchases_path %></h3>

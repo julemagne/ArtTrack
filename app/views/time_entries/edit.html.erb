@@ -1,0 +1,11 @@
+<div class="title">Editing Time Entry</div>
+
+<%= render 'form' %>
+
+<div class="form-lower-buttons">
+  <h3>
+    <%= link_to 'Details', @time_entry %>
+    <%= link_to 'Back to Time Entries', time_entries_path(id: @time_entry.project_id) %>
+    <%= link_to 'Delete This Entry', time_entries_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-button" %>
+  </h3>
+</div>

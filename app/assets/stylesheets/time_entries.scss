@@ -1,0 +1,117 @@
+// Place all the styles related to the time_entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.time-entry-index-start-time{
+  @include span-columns(12);
+  @include omega();
+  font-size: 200%;
+}
+.time-entry-index-stop-time{
+  @include span-columns(12);
+  @include omega();
+  font-size: 200%;
+}
+.time-in-words{
+
+}
+.time-entry-index-edit{
+
+}
+
+.time-entry-show-project{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.time-entry-show-start-time{
+  @include span-columns(12);
+  font-size: 80%;
+}
+
+.time-entry-show-stop-time{
+  @include span-columns(12);
+}
+.time-entry-show-date{
+  font-size: 50%;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 35pt;
+}
+
+.time-entry-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}
+
+
+.gd {
+  margin-top: 5px; margin-bottom: 5px;
+  display: inline-block;
+}
+
+.link-to-new-time-entry {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    float: right;
+  }
+}
+.clock-in-clock-out {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: heavy;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: gray;
+  }
+}
+
+.stopwatch {
+   display: inline-block;
+   background-color: #374654;
+   padding: 0px;
+   margin: 0px;
+ }
+ .stopwatch span {
+   font-family: $helvetica;
+   font-weight: normal;
+   display: block;
+   color: #FFF;
+ }
+ .stopwatch a {
+   padding-right: 5px;
+   text-decoration: none;
+ }
+
+ .stopwatch-text {
+   font-family: $helvetica;
+   font-weight: normal;
+   display: block;
+   color: #FFF;
+ }

@@ -1,0 +1,8 @@
+  <div class="title"><%= @project_cost.cost_type %></div>
+
+  <div class="project-cost-show-amount">Cost: <%= number_to_currency(@project_cost.amount) %></div>
+
+<div class="edit-back">
+  <%= link_to 'Edit', edit_project_cost_path(@project_cost) %> |
+  <%= link_to 'Back to Project Costs', project_costs_path %>
+</div>

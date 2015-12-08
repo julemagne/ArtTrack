@@ -1,0 +1,17 @@
+<div class="title">My Time Entries for <%= link_to Project.find(params[:id]).name, Project.find(params[:id]) %></div>
+<% @time_entries.each do |time_entry| %>
+<div class="cards">
+  <div class="card">
+    <div class="card-header">
+      <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_time_entry_path(time_entry) %>
+      <h2>Start: <%= link_to time_entry.start_time.strftime("%B %d, %Y, %I:%M%P"), time_entry %></br>
+      Stop: <%= link_to time_entry.stop_time.strftime("%B %d, %Y, %I:%M%P"), time_entry %></h2>
+      <div class="details">
+        <% if time_entry.start_time && time_entry.stop_time %>
+          <h3><%= distance_of_time_in_words(time_entry.stop_time, time_entry.start_time)%></h3>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

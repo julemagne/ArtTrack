@@ -1,0 +1,19 @@
+<div class="title"></div>
+<div class="cards">
+  <div class="card">
+    <div class="card-header">
+      <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_sale_path(@sale) %>
+      <h1><%= link_to @sale.project.name, @sale.project %> Sale</h1></div>
+    <div class="index-card">
+      <h3><p>Sold for: <%= number_to_currency(@sale.gross) %></p>
+        <p>Sold on: <%= @sale.date.strftime("%B %d, %Y") %></p>
+      <% if @sale.sales_channel %>
+        <p>Sold at: <%= link_to @sale.sales_channel.name, @sale.sales_channel %></p>
+      <% else %>
+        <p><%= link_to 'Add a Sales Channel', new_sales_channel_path(sale_id: @sale.id) %></p>
+      <% end %>
+    </h3>
+      <h3><%= link_to 'Back to Sales', sales_path %></h3>
+    </div>
+  </div>
+</div>

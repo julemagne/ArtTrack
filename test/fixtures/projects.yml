@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_id: 1
+  name: Painting I
+  description: GG
+
+two:
+  id: 2
+  user_id: 2
+  name: Painting II
+  description: WP

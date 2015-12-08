@@ -1,0 +1,24 @@
+<div class="sidebar-column">
+  <div class="profile-img-padding">
+    <%= link_to (image_tag @current_user.avatar.url(:medium), class: "profile-image", alt: "Profile Picture"), profile_path %>
+  </div>
+  <div class="sidebar-center"><%= link_to @current_user.name, profile_path %></div></br>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('home.png'), class: "sidebar-icon"), root_path %><%= link_to 'Dashboard', root_path, class: "fix-centering" %>
+  </div>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('p1.png'), class: "sidebar-icon"), projects_path %><%= link_to 'My Projects', projects_path, class: "fix-centering" %>
+  </div>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('p2.png'), class: "sidebar-icon"), material_purchases_path %><%= link_to 'My Inventory', material_purchases_path, class: "fix-centering" %>
+  </div>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('goals.png'), class: "sidebar-icon"), sales_goals_path %><%= link_to 'My Goals', sales_goals_path, class: "fix-centering" %>
+  </div>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('sales.png'), class: "sidebar-icon"), sales_path %><%= link_to 'My Sales', sales_path, class: "fix-centering" %>
+  </div>
+  <div class="highlight-left-border sidebar-link">
+    <%= link_to (image_tag asset_url('costs.png'), class: "sidebar-icon"), business_expenses_path %><%= link_to 'My Costs', business_expenses_path, class: "fix-centering" %>
+  </div>
+</div>

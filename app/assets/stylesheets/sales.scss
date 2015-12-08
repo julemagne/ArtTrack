@@ -1,0 +1,97 @@
+// Place all the styles related to the sales controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.sales-index-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.sales-index-gross{
+  @include span-columns(4);
+}
+
+.sales-index-date{
+  @include span-columns(4);
+}
+.sales-index-channel{
+  @include span-columns(4);
+  @include omega();
+
+}
+.sale-index-available{
+  @include span-columns(12);
+  @include omega();
+}
+.sales-index-edit{
+  @include span-columns(12);
+  @include omega();
+}
+
+.show-sale-gross{
+  @include span-columns(6);
+}
+
+.show-sale-date{
+  @include span-columns(6);
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 35pt;
+}
+
+.sales-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}
+
+.sales-index-gross {
+  padding-left: 15px;
+}
+
+.gd {
+  margin-top: 5px; margin-bottom: 5px;
+  display: inline-block;
+}
+
+.link-to-new-sale {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    float: right;
+  }
+}
+
+.sales-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}

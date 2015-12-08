@@ -1,0 +1,28 @@
+<%= form_for(@project_cost) do |f| %>
+  <% if @project_cost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_cost.errors.count, "error") %> prohibited this project_cost from being saved:</h2>
+
+      <ul>
+      <% @project_cost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :project_id, value: @project_cost.project_id || params[:project_id] %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_type %><br>
+    <%= f.text_field :cost_type, value: @project_cost.cost_type || ""%>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount, :class => 'text_field', :step => 0.01, value: number_to_currency(@project_cost.amount) || ""%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

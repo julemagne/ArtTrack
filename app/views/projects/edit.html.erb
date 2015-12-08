@@ -1,0 +1,11 @@
+<div class="title">Editing <%= @project.name %></div>
+
+<%= render 'form' %>
+
+      <div class="form-lower-buttons">
+        <h3>
+        <%= link_to 'Back to Project', @project %>
+        <%= link_to 'Back to All Projects', projects_path %>
+        <%= link_to 'Delete This Project', project_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-button" %>
+      </h3>
+      </div>

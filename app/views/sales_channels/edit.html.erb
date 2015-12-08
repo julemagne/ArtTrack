@@ -1,0 +1,11 @@
+<div class="title">Editing <%= @sales_channel.name %></div>
+
+<%= render 'form' %>
+
+<div class="form-lower-buttons">
+  <h3>
+    <%= link_to 'Details', @sales_channel %>
+    <%= link_to 'Back to Sales Channel', sales_channels_path %>
+    <%= link_to 'Delete', sales_channel_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-button" %>
+  </h3>
+</div>

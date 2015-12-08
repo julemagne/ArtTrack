@@ -1,0 +1,13 @@
+<div class="title"></div>
+<div class="cards">
+  <div class="card">
+    <div class="card-header"><%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_sales_channel_path(@sales_channel) %>
+      <h2><%= @sales_channel.name %></h2></div>
+      <div class="index-card">
+        <h3><span class='padding-underload'><%= @sales_channel.description %></span></h3>
+        <div class="details">
+         <h3><%= link_to 'Back to Sales Channels', sales_channels_path %></h3>
+      </div>
+    </div>
+  </div>
+</div>

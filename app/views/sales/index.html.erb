@@ -1,0 +1,39 @@
+<% if @sales %>
+<div class="title">
+  <%= image_tag asset_url('sales.png'), class: "card-header-icon" %>My Sales
+  <%= form_tag sales_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder:"Enter Search" %>
+  <%= image_submit_tag "search.png", class: "search-button", name: nil %>
+  <% end %>
+</div>
+<h3><%= link_to 'See Sales Channels', sales_channels_path %></h3>
+  <% @sales.each do |sale| %>
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_sale_path(sale) %>
+        <h2><%= link_to sale.project.name, sale %></h2>
+          <h3>
+            <% if sale.sales_channel %>
+              Sold at <%= sale.sales_channel.name%> on <%= sale.date.strftime("%B %d, %Y") %>
+            <% else %>
+              Sales channel not specified
+            <% end %></br>
+          </h3>
+      </div>
+        <div class="index-card">
+          <div class"sales-index-sales">
+          <div class="sales-index-gross gd"><h1><%= number_to_currency(sale.gross) %></h1></div>
+          <% if sale.net.to_i >= 0 %>
+            <div class="sales-index-net gd"><p> <h3><span class="sales-money-good"><%= number_to_currency(sale.net) %> profit</span></h3></p></div>
+          <% else %>
+            <div class="sales-index-net gd"><p> <h3><span class="sales-money-bad"><%= number_to_currency(sale.net) %> loss</span></h3></p></div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+<p> Please enter something to search! </p>
+<% end %>

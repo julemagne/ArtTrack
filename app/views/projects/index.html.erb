@@ -1,0 +1,35 @@
+<div class="title">
+<%= image_tag asset_url('p1.png'), class: "card-header-icon" %>My <% if params[:sold] %>Sold<% else %><% end %> Projects
+<%= form_tag projects_path, method: :get do %>
+  <%= text_field_tag :search, params[:search], placeholder:"Enter Search" %>
+  <%= image_submit_tag "search.png", class: "search-button", name: nil %>
+<% end %>
+</div>
+<h3>
+  <%= link_to 'Add New Project', new_project_path %>
+  <% if !params[:sold] %>
+    <%= link_to 'See Sold Projects', projects_path(sold: true) %>
+  <% else %>
+    <%= link_to 'See All Projects', projects_path %>
+  <% end %>
+</h3>
+<% if @projects.length > 0 %>
+  <% @projects.each do |project| %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_project_path(project) %>
+        <%= link_to (image_tag asset_url('sold.png'), class: "sold-icon"), new_sale_path(project_id: project.id) %>
+        <h2><%= link_to project.name, project%></h2>
+        <div class="details">
+          <br />
+          <h3><%=  project.description.capitalize%></h3>
+          <h3>Total Revenue: <%= number_to_currency(project.sales.map{|x| x.gross}.sum)%></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% else %>
+<% end %>

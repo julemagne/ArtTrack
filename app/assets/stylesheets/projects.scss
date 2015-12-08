@@ -1,0 +1,209 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#clock-in{
+  background-color: #53C6E0;
+  color: #EEE;
+  padding: .5em 1em;
+  margin-bottom: 5em;
+  transform: translate(2em, 2em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  font-family: $helvetica;
+}
+
+#clock-in:hover{
+  background-color: #21A6BB;
+}
+
+#clock-out{
+  background-color: #53C6E0;
+  color: #EEE;
+  padding: .5em 1em;
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-bottom: 5em;
+  transform: translate(2em, 2em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+.clock-buttons{
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+#clock-out:hover{
+  background-color: #21A6BB;
+}
+
+#view-time-entries{
+  background-color: #53C6E0;
+  color: #FFF;
+  padding: .25em .7em;
+  font-size: 16px;
+  margin: 0.5em;
+  transform: translate(2em, 2em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+
+#view-time-entries:hover{
+  background-color: #21A6BB;
+}
+
+#time-entry{
+  background-color: #FFF;
+  color: #5d5d5d;
+  padding-left: 1%;
+  margin-left: 0;
+}
+.project-index-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.project-show-name{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.project-index-1col{
+  color: white;
+}
+.project-index-desc{
+  @include span-columns(7);
+}
+
+
+.project-index-gross{
+  @include span-columns(2);
+}
+.project-index-saledate{
+  @include span-columns(3);
+}
+
+.project-index-edit{
+  @include span-columns(12);
+  @include omega;
+}
+
+.project-show-time{
+  @include span-columns(6);
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  padding-left: 4%;
+  float:right;
+  @include omega;
+
+}
+
+.project-show-description{
+  @include span-columns(6);
+}
+
+.project-show-material-name{
+  @include span-columns(12);
+  @include omega;
+  font-size: 25px;
+}
+.project-show-material-description{
+  @include span-columns(6);
+
+}
+.project-show-material-units{
+  @include span-columns(6);
+  @include omega;
+}
+
+.project-show-cost-name{
+  @include span-columns(12);
+  @include omega;
+  font-size: 25px;
+  padding-top: 5%;
+}
+.project-show-cost-type{
+  @include span-columns(6);
+
+}
+.project-show-cost-ammount{
+  @include span-columns(6);
+  @include omega;
+}
+
+.project-show-buttons{
+  margin-left: 0;
+}
+
+.add-material-button{
+  margin-left: 1.4%;
+}
+
+.add-project-button{
+  margin-left: 1.4%;
+  margin-bottom: 2%;
+}
+
+
+.form-button{
+  padding-left: 8%;
+  padding-right: 68%;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 35pt;
+}
+
+.project-index-edit {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 3px; margin-bottom: 8px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: #333;
+  }
+}
+
+.index-goal-amount {
+  font-family: Baskerville;
+}
+
+.gd {
+  margin-top: 5px; margin-bottom: 5px;
+  display: inline-block;
+}
+
+.link-to-new-project {
+  a {
+    color: white;
+    font-weight: lighter;
+    font-weight: lighter;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 3px; margin-top: 20px; margin-bottom: 3px;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+
+    float: right;
+  }
+}
+
+.project-index-row{
+  @include row();
+}

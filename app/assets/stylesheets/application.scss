@@ -1,0 +1,968 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+ @import "bourbon";
+ @import "neat";
+ @import "users";
+ @import "time_entries";
+ @import "projects";
+ @import "sales";
+ @import "sales_goals";
+ @import "dashboard";
+ @import "business_expenses";
+ @import "material_purchases";
+ @import "material_uses";
+ @import "project_costs";
+ @import "sales_channels";
+ @import "session";
+
+.delete-button{
+  color: #FFF;
+  background-color: #C92023;
+  float: right;
+  margin-top: -.3em;
+  margin-right: 1em;
+}
+
+.delete-button:hover{
+  background-color: #AD181B;
+}
+
+.no-margin{
+  margin-top: 0;
+}
+
+.form-lower-buttons{
+  @include span-columns(12);
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-right: 1em;
+
+
+}
+
+.sales-money-good{
+ color:#2DBA59;
+}
+.sales-money-bad{
+ color:#CB1F0D;
+}
+.padding-overload{
+ margin-left: -1em;
+}
+.padding-overload2{
+ margin-left: -.15em;
+}
+.padding-underload{
+ padding-left: 1em;
+}
+
+#view-time-entries{
+  background-color: #53C6E0;
+  color: #FFF;
+  padding: .25em .7em;
+  font-size: 16px;
+  margin: 0.5em;
+  transform: translate(2em, 2em);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 200;
+  letter-spacing: 0.1em;
+}
+
+#view-time-entries:hover{
+  background-color: #21A6BB;
+}
+
+ h1 span{
+   margin-left: 3.5%;
+ }
+
+ html, body {
+   padding: 0;
+   margin: 0;
+ }
+ //Index pages
+ .title{
+   color: #333;
+   font-family: $helvetica;
+   font-size: 2em;
+   margin-top: 0.5em;
+   margin-bottom: 1em;
+   margin-left: 0.5em;
+   img{
+     margin-left: -.2em;
+   }
+ }
+ .title >a{
+
+   text-decoration: none;
+ }
+ .index-icon {
+   height: 1.1em;
+   width: 1.1em;
+   margin-left: 0.2em;
+   margin-right: 1em;
+   margin-top: 1em;
+   float: right;
+ }
+ .card-header-icon {
+   height: 1.1em;
+   width: 1.1em;
+   margin-left: 0.2em;
+   margin-right: 0.2em;
+   margin-top: -1em;
+   transform: translate(0em, 0.2em);
+ }
+ .sold-icon {
+   height: 2.2em;
+   width: 2.2em;
+   margin-left: 0.2em;
+   margin-right: 0.8em;
+   transform: translate(0em, 0.7em);
+   float: right;
+ }
+ //Containers
+ .outer-container{
+   @include span-columns(12);
+ }
+
+ .container{
+   @include outer-container(90%);
+ }
+
+ .blue{
+   padding-top: 0px;
+   background-color: #ddebee;
+}
+
+ .page-wrap {
+   @include outer-container(100%);
+ }
+//Splash pages
+.login-image{
+  height: 100%;
+  width: 100%;
+}
+
+.login-window{
+  // opacity: .75;
+}
+
+.opaque{
+  background-color: rgba(255, 0, 0, .75);
+//   opacity: .75;
+}
+
+div.no-ghost {
+  input {
+    opacity: 1;
+  }
+}
+
+.some-height-padding{
+  padding-top: 0.6em;
+  padding-bottom: 0.5em;
+  padding-left: 6.5em;
+}
+
+.login-form{
+  text-align: left;
+  padding-left: 0em;
+  // opacity: 1;
+}
+
+#login-boxes{
+  // background-color: rgba(0, 255, 255, 1);
+  // opacity: 1;
+}
+
+// .smaller-percent{
+//   width: 22%;
+//   margin: auto;
+// }
+
+#clock-out-nav{
+  color: #53C6E0;
+}
+
+.background-ghost{
+  padding-left: 36%;
+  padding-top: 15%;
+  position: absolute;
+  //opacity: .75;
+}
+//General sitewide stuff
+input[type=submit]{
+  font-family: $helvetica;
+  font-size: 1em;
+  margin-top: .1em;
+  margin-bottom: 1em;
+  // margin-left: 1em;
+  text-decoration: none;
+  font-weight: normal;
+  color: #eee;
+  text-decoration: none;
+  background-color: #3DC7DD;
+  padding-top: 0.3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.4em;
+  border: none;
+  max-width: 25%;
+}
+
+select{
+  font-size: 14px;
+}
+
+button[type=button]{
+  font-family: $helvetica;
+  font-size: 1em;
+  margin-top: .1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  text-decoration: none;
+  font-weight: normal;
+  color: #eee;
+  text-decoration: none;
+  background-color: #3DC7DD;
+  padding-top: 0.3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.4em;
+  border: none;
+  max-width: 20%;
+}
+
+p{
+  font-family: $helvetica;
+}
+
+a{
+  font-family: $helvetica;
+  color: inherit;
+}
+
+h1{
+  font-family: $helvetica;
+  font-size: 1.8em;
+  margin-top: .1em;
+  margin-bottom: .1em;
+  font-weight: normal;
+}
+
+h1 > a{
+  text-decoration: none;
+  color: black;
+}
+
+h2{
+  font-family: $helvetica;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-top: .4em;
+  margin-bottom: 0em;
+  color: black;
+}
+
+h2 > a{
+  text-decoration: none;
+  color: black;
+}
+
+h2 > a:hover{
+  color: #5D5D5D;
+}
+
+h3{
+  font-family: $helvetica;
+  font-size: 1em;
+  margin-top: .1em;
+  margin-bottom: 1em;
+  color: #5D5D5D;
+  text-decoration: none;
+  padding-top: 0em;
+  font-weight: normal;
+}
+
+h3 > a{
+  color: #eee;
+  text-decoration: none;
+  background-color: #3DC7DD;
+  padding-top: 0.3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.4em;
+  margin-left: 1em;
+}
+
+h3 > a:hover{
+  background-color: #21A6BB;
+}
+
+h4 {
+  font-family: $helvetica;
+  font-size: 1.3em;
+  // padding-left: 4.9em;
+  padding-top: 0.5em;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0em;
+}
+
+h5{
+  font-family: $helvetica;
+  font-size: 1.3em;
+  padding-left: 0.7em;
+  padding-top: 0.5em;
+  font-weight: normal;
+  margin-bottom: 1em;
+  margin-top: 0em;
+}
+h6{
+  font-family: $helvetica;
+  font-size: 1.7em;
+  padding-left: 0.6em;
+  padding-top: 0.5em;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+  margin-top: 0em;
+}
+// Sidebar 4 Lyfe
+.sidebar-column{
+  @include span-columns(2 of 12);
+  background: #354652;
+  min-height: 100vh;
+  position: fixed;
+  margin-top: -44px;
+  padding-top: 44px;
+  padding-bottom: 96px;
+}
+
+.sidebar-center{
+  font-family: $helvetica;
+  font-size: 1em;
+  background-color: #354652;
+  margin: auto;
+  text-align: center;
+  color: #ccc;
+}
+
+.sidebar-center > a{
+  text-decoration: none;
+}
+
+.sidebar-center > a:hover{
+  color: white;
+}
+
+.sidebar-icon {
+  height: 2em;
+  width: 2em;
+  margin-right: 1em;
+  background-color: #CAB9AD;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  border-radius: 1em;
+}
+
+.sidebar-link{
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  font-family: $helvetica;
+  font-size: 1em;
+}
+
+.sidebar-link > a{
+  text-decoration: none;
+  color: #ccc;
+}
+
+.sidebar-link > a:hover {
+  color: white;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+
+.profile-img-padding{
+  padding-top: 3em;
+  padding-bottom: 1em;
+  padding-left: 3.6em;
+  padding-right: 3.6em;
+}
+
+.dashboard-names{
+  @include span-columns(12);
+  padding: 0em 1em 0em 1em;
+}
+
+.dashboard-column{
+  @include span-columns(12);
+  padding: 0em;
+  border-bottom: .1em solid #C9C9C9;
+}
+
+.dashboard-column > a{
+  text-decoration: none;
+  font-size: .7em;
+  color: #5D5D5D;
+  padding-left: 1em;
+}
+
+.dashboard-right{
+  @include span-columns(10);
+  @include omega;
+  padding-top: 2em;
+  padding-right: 1.7em;
+  padding-bottom: 1em;
+  float:right;
+}
+
+.dashboard-goals{
+  margin-top: 5%;
+  border-top: .1em solid white;
+}
+.start-of-line{
+  @include span-columns(6);
+}
+
+.end-of-line{
+  @include span-columns(6);
+  @include omega;
+}
+
+.progress-meter .background {
+  fill: #354652;
+}
+
+.progress-meter .foreground {
+  fill: #6CCD61;
+}
+
+.progress-meter text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.highlight-left-border:hover{
+  border-left: 0.25em solid #83E6F1;
+  background-color: #475E6D;
+}
+
+.fix-centering {
+  vertical-align: 0.7em;
+}
+//Awesome Footer
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer{
+  @include row();
+  padding: 3em;
+  clear: both;
+  font-family: $helvetica;
+  text-align: center;
+  font-size: 0.9em;
+  color: #5D5D5D;
+  background-color: #ddebee;
+  min-height: 100vh;
+}
+
+.site-footer > a{
+  text-decoration: none;
+  color: black;
+}
+//Bourbon
+header.navigation {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #364653 !default;
+  $large-screen: em(860) !default;
+  $navigation-padding: 0em;
+  $navigation-background: $dark-gray;
+  $navigation-color: transparentize(white, 0.3);
+  $navigation-color-hover: white;
+  $navigation-height: 32px;
+  $navigation-nav-button-background: $action-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-search-background: lighten($navigation-background, 5);
+  $navigation-search-border: 1px solid darken($navigation-background, 5);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $large-screen;
+
+  background-color: $navigation-background;
+  border-bottom: 1px solid darken($navigation-background, 10);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+  position: fixed;
+  text-align: center;
+  float: left;
+
+  .navigation-left{
+    padding-left: 1%;
+    float: left;
+    line-height: $navigation-height;
+    color: $navigation-color;
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  .navigation-left > a{
+    text-decoration: none;
+  }
+
+  .navigation-right{
+    padding-right: 1%;
+    float: right;
+    line-height: $navigation-height;
+    color: $navigation-color;
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  .navigation-right >a{
+    text-decoration: none;
+  }
+
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-right: 2em;
+    // font-family: "The Dream";
+    // font-size: 2em;
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
+    }
+  }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    min-height: $navigation-height;
+    z-index: 9999999;
+  }
+
+  ul.navigation-menu {
+    // clear: both;
+    display: none;
+    // margin: 0 auto;
+    overflow: visible;
+    // padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+
+  .nav-icon{
+    height: 50px;
+    width: 50px;
+  }
+
+  ul li.nav-link {
+    background: $navigation-background;
+    display: inline;
+    line-height: $navigation-height;
+    overflow: visible;
+    width: 100%;
+    z-index: 9999;
+    margin-right: 1em;
+    a {
+      color: $navigation-color;
+      display: inline;
+      text-decoration: none;
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+
+  ul li.nav-go-right {
+    background: $navigation-background;
+    display: inline;
+    line-height: $navigation-height;
+    width: 100%;
+    z-index: 9999;
+    background: transparent;
+    display: inline;
+    text-decoration: none;
+
+    a {
+      color: $navigation-color;
+      text-decoration: none;
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+}
+
+// Cards
+
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.card {
+  $base-border-color: #354652 !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: $card-border-color;
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: white;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  //border: $card-border;
+  //box-shadow: 0 2px 4px darken(black, 10%);
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  min-width: 400px;
+  position: relative;
+  margin-top: 1em;
+
+  .clock-card{
+    @include span-columns(6);
+    margin-left: 1em;
+    padding-left: 1em;
+    margin-top: 1em;
+  }
+  .project-show-card{
+    @include span-columns(6);
+    background-color: white;
+    margin-top: 1em;
+    p{
+      font-family: $helvetica;
+      margin-top: 0em;
+      margin-left: 1em;
+      margin-bottom: 1em;
+    }
+    h1{
+      margin-left: 0.5em;
+    }
+  }
+  .index-card{
+    @include span-columns(12);
+    background-color: white;
+    p{
+      font-family: $helvetica;
+      margin-top: 0em;
+      margin-left: 1em;
+      margin-bottom: 1em;
+    }
+    h3{
+      padding-left: 0;
+    }
+  }
+
+  .login{
+    background-color: white;
+  }
+
+  .donut-graph{
+    padding-top: 10%;
+  }
+
+  #pieChart{
+    margin-bottom: 8%;
+  }
+
+  .card-image {
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    height: 250px;
+    max-height: 250px;
+    background-color: $card-image-hover-color;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: white;
+    //border-bottom: $card-border;
+    //border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    padding: ($base-spacing / 3) ($base-spacing / 2) + 0.5;
+
+    .details{
+      font-family: $helvetica;
+      color: #5D5D5D;
+      font-size: 0.9em;
+      background-color: white;
+      a{
+        text-decoration: none;
+        color: #EEE;
+      }
+      a:hover{
+        color: #939393;
+      }
+      h3{
+        padding-left: 0;
+      }
+    }
+  }
+
+  .card-copy {
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+    background-color: #354652;
+    color: white;
+    font-weight: 300;
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  &:active {
+
+    .card-header {
+    }
+  }
+}
+
+// Flashes
+
+$base-spacing: 1.5em !default;
+$alert-color: #fff6bf !default;
+$error-color: #fbe3e4 !default;
+$notice-color: #e6efc2 !default;
+$success-color: #e6efc2 !default;
+$warning-color: #F1DCB2 !default;
+
+@mixin flash($color) {
+  background-color: $color;
+  color: darken($color, 60%);
+  display: block;
+  // position: absolute;
+  padding: $base-spacing / 2;
+  // margin-left: 40em;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid darken($color, 5%);
+
+  a {
+    color: darken($color, 70%);
+    text-decoration: underline;
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
+
+.flash-alert {
+  @include flash($alert-color);
+}
+
+.flash-error {
+  @include flash($error-color);
+}
+
+.flash-notice {
+  @include flash($notice-color);
+}
+
+.flash-success {
+  @include flash($success-color);
+}
+
+.flash-warning {
+  @include flash($warning-color);
+}
+.flash-shift{
+  font-family: $helvetica;
+  margin-bottom: -15px;
+}
+
+// Image Gradient Overlay
+
+.image-gradient-dynamic {
+  $image-gradient-color-top: white;
+  $transparency-top: 0.9;
+  $image-gradient-color-bottom: green;
+  $transparency-bottom: 0.6;
+  $vertical-angle: 0deg;
+  $image-gradient-color-left: teal;
+  $transparency-left: 0.8;
+  $image-gradient-color-right: yellow;
+  $transparency-right: 0.8;
+  $horizontal-angle: 90deg;
+
+  line-height: 0;
+  position: relative;
+  width: 100%;
+
+  img {
+   height: auto;
+   left: 0;
+   position: relative;
+   top: 0;
+   width: 100%;
+  }
+
+  .copy {
+    @include transform(translate(-50%, -50%));
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    z-index: 999;
+
+    p {
+      color: white;
+      line-height: 1.5em;
+      padding: 1em 2em;
+      position: relative;
+    }
+  }
+
+  .overlay {
+    @include linear-gradient($vertical-angle, transparentize($image-gradient-color-top, $transparency-top),
+      transparentize($image-gradient-color-bottom, $transparency-bottom));
+    display: block;
+    @include position(absolute, 0px 0px 0px 0px);
+
+    &:after {
+      @include linear-gradient($horizontal-angle, transparentize($image-gradient-color-left, $transparency-left),
+        transparentize($image-gradient-color-right, $transparency-right));
+      @include position(absolute, 0px 0px 0px 0px);
+      content: '';
+      display: block;
+    }
+  }
+}
+
+// Search bar style
+
+.search-button {
+  height: 2.5em;
+  width: 2.5em;
+  margin-bottom: -0.8em;
+  margin-left: -1em;
+  background-color: #C23822;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  padding: 0.5em;
+  border-bottom-right-radius: 15%;
+  border-top-right-radius: 15%;
+}
+.search-button:hover{
+  background-color: #822617;
+}
+
+label.stat-label {
+  display: inline-block;
+  width: 150px;
+}
+
+input {
+  font-size: 14px;
+  width: 40%;
+}
+
+#search{
+  height: 2.5em;
+}
+
+textarea {
+  font-size: 14px;
+  width: 40%;
+}

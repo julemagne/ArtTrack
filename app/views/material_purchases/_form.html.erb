@@ -1,0 +1,44 @@
+<%= form_for(@material_purchase) do |f| %>
+  <% if @material_purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@material_purchase.errors.count, "error") %> prohibited this material_purchase from being saved:</h2>
+
+      <ul>
+      <% @material_purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="index-card">
+        <div class="field">
+          <%= f.hidden_field :user_id, value: @current_user.id %>
+        </div>
+        <div class="field">
+          <p><%= f.label :name %></br>
+          <%= f.text_field :name%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :cost %></br>
+          <%= f.number_field :cost, :class => 'text_field', :step => 0.01%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :units %></br>
+          <%= f.number_field :units, :class => 'text_field', :step => 'any'%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :receipt, "Upload a receipt for this purchase"%></br>
+          <%= f.file_field :receipt %></p>
+        </div>
+
+        <div class="actions">
+          <p><%= f.submit 'Update Inventory' %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

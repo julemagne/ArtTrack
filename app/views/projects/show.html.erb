@@ -1,0 +1,83 @@
+<div class="title"></div>
+<div class="page-wrap">
+
+  <div class="card">
+    <div class="project-show-card padding-underload">
+      <div class="details">
+        <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_project_path(@project) %>
+        <%= link_to (image_tag asset_url('sold.png'), class: "sold-icon"), new_sale_path(project_id: @project.id) %>
+        <h2><%= @project.name %></h2>
+        <h3><%= @project.description.capitalize %></h3>
+      </div>
+      <div class="index-card">
+        <h4> Materials </h4>
+        <% if @project.material_uses.length > 0 %>
+          <% @project.material_uses.each do |material| %>
+            <h3><%= material.name %></br>
+            Units: <%= material.units %></br>
+            Cost: <%= number_to_currency(material.cost) %></h3>
+          <% end %>
+        <% else %>
+          <h3>No materials are applied to this project.</h3>
+        <% end %>
+
+        <h4>Project Costs</h4>
+        <% if @project.project_costs.length > 0 %>
+          <% @project.project_costs.each do |cost| %>
+            <h3><%= cost.cost_type %></br>
+            Cost: <%= number_to_currency(cost.amount) %></h3>
+          <% end %>
+        <% else %>
+          <h3>No costs are applied to this project.</h3>
+        <% end %>
+
+      <h4>Sales</h4>
+      <div class="index-card">
+        <% if @project.sales.length > 0 %>
+          <% @project.sales.each do |sale| %>
+            <h3>Sold on <%= sale.date.strftime("%B %d, %Y") %> for <%= number_to_currency(sale.gross) %></h3>
+          <% end %>
+        <% else %>
+          <h3>In Stock</h3><br />
+          <h3>
+            The estimated value of this project is
+            <%= number_to_currency(@project.estimated_value)%>
+          </h3>
+        <% end %>
+        <br />
+        <h3><%= link_to 'Back to All Projects', projects_path, class: "project-show-buttons" %></h3>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="clock-card">
+      <div class="card-header">
+        <div class="clock-buttons">
+          <%= link_to 'Clock In', clock_in_time_entries_path(time_entry: {project_id: @project.id}), method: :post, id: "clock-in" %>
+          <%= link_to 'Clock Out', clock_out_time_entries_path(time_entry: {project_id: @project.id}), method: :patch, id: "clock-out" %>
+        </div>
+        <div class="details">
+          <p><% if @project_time > 0 %>
+            <h3>You have worked on <%= @project.name %> for
+            <%= (@project_time/3600).floor %> hours</h3>
+            <% @time_entries.each do |time_entry| %>
+              <% if time_entry.start_time && time_entry.stop_time %>
+                <h3>
+                  <%= distance_of_time_in_words(time_entry.stop_time, time_entry.start_time).capitalize %>
+                  worked on <%= link_to time_entry.start_time.strftime("%B %d"), time_entry, id: "time-entry" %>
+                </h3>
+              <% end %>
+            <% end %>
+            <br />
+            <h3><%= link_to 'View All Time Entries', time_entries_path(id: @project.id), class: "project-show-buttons"%></h3>
+          <% else %>
+              You have not worked on this project yet.
+          <% end%>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

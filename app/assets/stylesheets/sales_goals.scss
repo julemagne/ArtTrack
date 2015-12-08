@@ -1,0 +1,110 @@
+// Place all the styles related to the sales_goals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Sales goals progress meter
+.goal-index-amount{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.goal-index-length-of-time{
+  @include span-columns(3);
+}
+
+.goal-index-start-time{
+  @include span-columns(3);
+}
+
+.goal-index-success{
+  @include span-columns(12);
+  padding: 1em;
+  padding-left: 0;
+}
+
+.goal-index-end-time{
+  @include span-columns(3);
+}
+
+.goal-index-edit{
+  @include span-columns(12);
+  @include omega();
+}
+
+.goal-index-row{
+  @include row();
+}
+
+.goal-index-card-title{
+  h2{
+    @include span-columns(10);
+  }
+}
+
+.goal-show-amount{
+  @include span-columns(12);
+  @include omega();
+  font-size: 260%;
+}
+
+.goal-show-length{
+  @include span-columns(4);
+}
+
+.goal-show-start-time{
+  @include span-columns(4);
+}
+.goal-show-success{
+  @include span-columns(3);
+  @include omega();
+}
+
+.show-goal-amount {
+  font-family: $helvetica;
+}
+
+.progress-bar-indication {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 0px !default;
+  $base-background-color: white !default;
+  $base-line-height: 0em !default;
+  $action-color: #36b85d !default;
+  $progress-border-color: $base-border-color;
+  $progress-border: 1px solid $progress-border-color;
+  $progress-meter-border-color: $action-color;
+  $progress-meter-border: 1px solid darken($progress-meter-border-color, 15%);
+  $progress-meter-color: $progress-meter-border-color;
+  $progress-background: darken($base-background-color, 5);
+  $progress-animation-duration: 3s;
+  $progress-color: #000;
+
+  background-color: $progress-background;
+  border-radius: $base-border-radius;
+  border: $progress-border;
+  box-shadow: inset 0 0 3px 0 rgba(darken($progress-background, 50%), 0.15);
+  margin: 0 auto;
+  width: 100%;
+
+  > span.meter {
+    @include box-sizing(border-box);
+    background-color: $progress-meter-color;
+    background-repeat: repeat-x;
+    background-size: 0.1em;
+    border-bottom-right-radius: 0;
+    border-radius: 0;
+    border-top-right-radius: 0;
+    border: $progress-meter-border;
+    display: block;
+    height: 50%;
+    max-width: 100%;
+  }
+
+  p {
+    color: $progress-color;
+    line-height: $base-line-height;
+    margin: 0;
+    padding: 1em 5em 0em 0em;
+    // text-shadow: 0 0 1px black;
+  }
+}

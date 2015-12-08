@@ -1,0 +1,19 @@
+<header class="navigation" role="banner">
+  <div class="navigation-left">
+    <%= link_to 'ArtTrack', root_path, class: "logo" %>
+  </div>
+  <% if logged_in? %>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <% if clocked_in? %>
+          <li class = "nav-link stopwatch-text">Working on <%= truncate(@current_time_entry.project.name) %> for
+          <span class="stopwatch" id="timer" start-time="<%=@current_time_entry.start_time.to_f * 1000 %>"></span></li>
+          <li class="nav-link"><%= link_to 'Clock Out', clock_out_time_entries_path(time_entry: {project_id: @current_time_entry.project_id}), method: :patch, id: "clock-out-nav" %></li>
+        <% end %>
+        <div class="navigation-right">
+          <%= link_to 'Log Out', logout_path, method: :delete %>
+        </div>
+      </ul>
+    </nav>
+  <% end %>
+</header>

@@ -1,0 +1,11 @@
+<div class="title">Editing Sales Goal</div>
+
+<%= render 'form' %>
+
+<div class="form-lower-buttons">
+  <h3>
+    <%= link_to 'Details', @sales_goal %>
+    <%= link_to 'Back to Sales Goals', sales_goals_path %>
+    <%= link_to 'Delete This Goal', sales_goal_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-button" %>
+  </h3>
+</div>

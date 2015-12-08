@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  user_id: 1
+  amount: 1000
+  length_of_time: 1 month
+  start_time: 2015-11-02
+  end_time: 2015-11-09
+  success: false
+
+two:
+  id: 2
+  user_id: 2
+  amount: 2000
+  length_of_time: 2 months
+  start_time: 2015-11-02
+  end_time: 2015-11-16
+  success: true

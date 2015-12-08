@@ -1,0 +1,19 @@
+<div class="title"></div>
+<div class="cards">
+  <div class="card">
+    <div class="card-header"></div>
+    <div class="index-card padding-underload">
+      <%= link_to (image_tag asset_url('edit.png'), class: "index-icon"), edit_sales_goal_path(@sales_goal) %>
+      <h3>Goal: <%= number_to_currency(@sales_goal.amount) %></h3>
+      <h3><%= "Sales Channel: " + SalesChannel.find(@sales_goal.sales_channel_id).name if @sales_goal.sales_channel_id %></h3>
+      <h3>Duration: <%= @sales_goal.length_of_time %></h3>
+      <h3>Started: <%= @sales_goal.start_time.strftime("%B %d, %Y") %></h3>
+      <h3><% if @sales_goal.success %>Achieved<% else %>Not Achieved<% end %></h3>
+      <div class="details padding-overload">
+        <h3>
+          <%= link_to 'Back to Sales Goals', sales_goals_path %>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-header"></div>
+      <div class="index-card">
+        <div>
+          <p ><%= f.label :name %></br>
+
+          <%= f.text_field :name, value: @project.name || ""%></p>
+        </div>
+        <div class="field">
+          <p><%= f.label :description %></br>
+          <%= f.text_area :description, value: @project.description || ""%></p>
+        </div></br>
+        <div><h5> Materials: </h5></div>
+        <div class="material-form">
+          <%= f.fields_for :material_uses do |ff| %>
+          <div class = "material-fields">
+            <div class="field">
+              <p><%= ff.label :material_purchase_id, value: "Material" %>
+              <%= ff.collection_select(:material_purchase_id, @current_user.material_purchases.order(:name), :id, :name, {prompt: "Select Material"}) %>
+              <%= ff.label :units %>
+              <%= ff.number_field :units, step: :any%></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <button type="button" class="add-material-button">Add Material </button>
+
+        <div><h5> Project Costs: </h5></div>
+        <div class="project-cost-form" id="project-cost-form">
+          <%= f.fields_for :project_costs do |ff| %>
+            <div class = "project-cost-fields">
+              <div class="field">
+                <p><%= ff.label :cost_type %>
+                <%= ff.text_field :cost_type%>
+                <%= ff.label :amount %>
+                <%= ff.number_field :amount%></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <button type="button" class="add-project-button">Add Project Cost </button>
+        <p />
+        <div class="actions">
+          <p><%= f.submit %></p>
+        </div>
+    </div>
+    </div>
+  </div>
+<% end %>
