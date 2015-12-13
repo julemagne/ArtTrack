@@ -615,8 +615,14 @@ header.navigation {
   // The nav items
 
   .nav-icon{
-    height: 50px;
-    width: 50px;
+    line-height: 0;
+    background-color: #CAB9AD;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
   }
 
   ul li.nav-link {

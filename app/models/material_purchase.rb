@@ -18,6 +18,6 @@ class MaterialPurchase < ActiveRecord::Base
 
   def self.search(q)
     q = "%#{q}%"
-    MaterialPurchase.where("name LIKE LOWER(?)", q).order(:name)
+    MaterialPurchase.where("units_remaining > ? AND name LIKE LOWER(?)", 0, q).order(:name)
   end
 end

@@ -5,13 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!(name: "Julie", email: "julie@email.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 15)
 User.create!(name: "Tyler", email: "Tyler@email.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 15)
 User.create!(name: "Angela", email: "angela@email.com", password: "password")
 User.create!(name: "Phil", email: "Phil_is_awesome@yeah.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 12.33)
-User.create!(name: "Kevin", email: "kevin@hotmail.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 12.33)
-User.create!(name: "Dead", email: "DeamonKiller@hunter.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 12.33)
-User.create!(name: "Julie", email: "julie@email.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 15)
-
 
 Project.create!(user_id: 1, name: "Fire on the Mountaintop", description: "Landscape, oil painting, 24x36")
 Project.create!(user_id: 1, name: "Portrait of the Artist", description: "Self portrait, acrylic painting, 16x24")

@@ -7,7 +7,7 @@ class MaterialPurchasesController < ApplicationController
     if params[:search]
       @material_purchases = material_purchase_scope.search(params[:search])
     else
-      @material_purchases = material_purchase_scope.order(:name)
+      @material_purchases = material_purchase_scope.where("units_remaining > ?", 0).order(:name)
     end
   end
 
