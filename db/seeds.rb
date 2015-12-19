@@ -11,11 +11,16 @@ User.create!(name: "Angela", email: "angela@email.com", password: "password")
 User.create!(name: "Phil", email: "Phil_is_awesome@yeah.com", password: "password", public_profile: false, time_zone: "Eastern Time (US & Canada)", hourly_rate: 12.33)
 
 Project.create!(user_id: 1, name: "Fire on the Mountaintop", description: "Landscape, oil painting, 24x36")
+Project.create!(user_id: 2, name: "A Portrait of Phil", description: "Portrait, acrylic painting, 16x24")
 Project.create!(user_id: 1, name: "Portrait of the Artist", description: "Self portrait, acrylic painting, 16x24")
 Project.create!(user_id: 1, name: "Still Life with Fruit", description: "Still life, oil painting, 18x24")
 Project.create!(user_id: 1, name: "Still Life with Fruit Print", description: "9x12 glossy print")
 Project.create!(user_id: 1, name: "Still Life with Fruit Small Print", description: "4x6 matte print")
 Project.create!(user_id: 1, name: "Collie Portrait", description: "Dog portrait, acrylic painting, 8x10")
+
+2000.times do
+  Project.create!(user_id: [1,2,3,4].sample, name: Faker::Book.title, description: Faker::Lorem.paragraph)
+end
 
 Sale.create!(user_id: 1, project_id: 5, sales_channel_id: 1, gross: 100, net: 77.84, date: Date.today - rand(1..990).days)
 Sale.create!(user_id: 1, project_id: 5, sales_channel_id: 3, gross: 100, net: 77.84, date: Date.today - rand(1..990).days)

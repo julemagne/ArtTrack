@@ -4,7 +4,6 @@ class SalesController < ApplicationController
   after_action :update_goals, only: [:create, :update, :destroy]
   # GET /sales
   def index
-    # We need a button to show more, either Ajax or navigate to page of next 50 or all
     if params[:search]
       @sales = sale_scope.search(params[:search])
     else
